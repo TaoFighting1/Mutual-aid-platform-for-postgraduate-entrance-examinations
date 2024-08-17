@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db3?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 2024MB
+  #配置自定义资源
+  web:
+    resources:
+      static-locations:
+        - classpath:/META-INF/resources/
+        - classpath:/resources/
+        - classpath:/static/
+        - classpath:/public/
+        - file:E:/temp/
+
+mybatis-plus:
+  #配置映射文件位置
+  mapper-location: classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #将 java 实体类属性的驼峰命名规则转换为数据库字段的下划线命名规则
+    map-underscore-to-camel-case: true
+    # 查询结果中包含空值的列，在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+  type-aliases-package: com.tjetc.entity
+
+#token的过期时间
+token:
+  expiration: 3600000
+#上传文件的基本路径
+file:
+  basePath: E:/temp/
