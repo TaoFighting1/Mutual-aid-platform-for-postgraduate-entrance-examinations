@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8081
 
 spring:
   datasource:
@@ -35,7 +35,16 @@ mybatis-plus:
 
 #token的过期时间
 token:
-  expiration: 3600000
+  expiration: 10000
 #上传文件的基本路径
 file:
   basePath: E:/temp/
+
+#配置日志
+logging:
+  #日志记录的文件名称和路径
+  file:
+    name: admin.log
+  #日志级别
+  level:
+    com.tjetc: debug

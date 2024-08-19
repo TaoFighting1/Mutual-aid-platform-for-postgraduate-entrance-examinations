@@ -24,7 +24,7 @@ public class JsonResult<T> {
     }
 
     public static JsonResult fail(String message){
-        return new JsonResult(0,message,null);
+        return new JsonResult(1,message,null);
     }
 
     public static <T> JsonResult fail(String message,T data){

@@ -18,4 +18,17 @@
         <result column="update_time" property="updateTime"></result>
         <result column="create_time" property="createTime"></result>
     </resultMap>
+
+    <select id="selectPageLikeUsername" resultMap="baseMap">
+        select id,username,password,image_path,update_time,create_time
+        from t_admin
+        where username like concat('%',#{username},'%')
+        order by id desc
+    </select>
+
+    <select id="selectByUsername" resultMap="baseMap">
+        select id,username,password,image_path,update_time,create_time
+        from t_admin
+        where username =#{username}
+    </select>
 </mapper>

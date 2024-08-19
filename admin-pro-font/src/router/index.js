@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/admin/detail',
       name: 'admin-detail',
       component: () => import('../views/AdminDetailView.vue')
+    },
+    {
+      path: '/admin/save',
+      name: 'admin-save',
+      component: () => import('../views/AdminSaveView.vue')
     }
   ]
 })

@@ -4,6 +4,7 @@ import qs from 'qs'
 import { useAdminStore } from '@/stores/admin'
 
 
+
 // axios创建实例对象
 const service = axios.create({
     // 设置baseRUL
@@ -82,7 +83,7 @@ service.interceptors.response.use(
         const res = response.data
 
         if (res.state > 0) {
-            console.log(res.message)
+            console.log(`res.message:${res.message}`)
             ElMessage.error(res.message || "系统出错");
             return new Promise(() => {
             });//此时的promise链停下来了

@@ -31,6 +31,6 @@ public final class FileUploadUtil {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return "/"+returnPathPrefix+"/"+strLocalDateNow+"/"+newFileName+"/"+suffxName;
+        return "/"+returnPathPrefix+"/"+strLocalDateNow+"/"+newFileName+"."+suffxName;
     }
 }

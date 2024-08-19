@@ -35,4 +35,26 @@ const findById = (id) => {
     })
 }
 
-export { login, page, findById }
+//通过id查询admin数据
+const deleteById = (id) => {
+    return request({
+        // url: "http://localhost:8081/login",
+        //这与proxy的配置有关
+        url: `/api/admin/delete/${id}`,//代理成http://localhost:8081/login 进行访问
+        method: "get",
+    })
+}
+
+//通过id查询admin数据
+const save = (data) => {
+    return request({
+        // url: "http://localhost:8081/login",
+        //这与proxy的配置有关
+        url: `/api/admin/save`,//代理成http://localhost:8081/login 进行访问
+        method: "post",
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+        data
+    })
+}
+
+export { login, page, findById, deleteById, save }

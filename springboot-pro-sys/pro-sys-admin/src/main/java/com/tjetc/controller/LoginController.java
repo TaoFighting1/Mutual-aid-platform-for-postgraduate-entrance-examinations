@@ -6,6 +6,7 @@ import com.tjetc.common.JwtTokenUtil;
 import com.tjetc.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+//后端允许跨域，不推荐，不安全
+//@CrossOrigin
 public class LoginController {
 
     @Autowired

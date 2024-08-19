@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @TableName("t_admin")
 public class Admin {
-    //@TableId 对表主键字段与属性映射，value是表示字段名称，type是主键类型
+    //@TableId 对表主键字段与属性映射，value是表示字段名称，type是主键类型(自动增长)
     @TableId(value="id",type= IdType.AUTO)
     private Long id;
     @TableField(value = "username")
